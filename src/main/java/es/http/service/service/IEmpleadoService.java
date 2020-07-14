@@ -20,5 +20,7 @@ public interface IEmpleadoService {
 		
 		public void eliminarEmpleado(Long id);
 		
+		public List<Empleado> mostrarSalarios();
+		
 
 }

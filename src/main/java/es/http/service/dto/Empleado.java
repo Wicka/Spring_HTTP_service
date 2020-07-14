@@ -25,88 +25,116 @@ public class Empleado {
 		@Column(name = "nombre")//no hace falta si se llama igual
 		private String nombre;
 		
-		@Column(name = "feina")//no hace falta si se llama igual
-		private String feina;
+		@Column(name = "cargo")
+		private String cargo;
 		
 		
-		//CONSTRUCTOR
+		@Column(name = "salario")
+		private int salario;
 		
-		public Empleado() {
-		
-		}
 		
 		
 		/**
 		 * @param id
 		 * @param nombre
-		 * @param feina		
+		 * @param cargo
+		 * @param salario		
 		 */
 		
-
-		public Empleado(Long id, String nombre, String feina) {
+		//CONSTRUCTORES		
+		public Empleado() {	
+		}
+		
+		
+		//CONSTRUCTOR CON PARAMETROS
+		public Empleado(Long id, String nombre, String cargo) {
 			this.id = id;
 			this.nombre = nombre;
-			this.feina = feina;
+			this.cargo = cargo;
+	//		this.salario=calculaSalario() ;		
 		}
 		
-		//GETTER Y SETTERS
 		
-
-		// CAMPO ID
-		
-		/**
-		 * @return the id
-		 */
+		//GETTER Y SETTERS		
+				
 		public Long getId() {
 			return id;
-		}
-
-		/**
-		 * @param id the id to set
-		 */
+		}	
 		public void setId(Long id) {
 			this.id = id;
 		}
 
-		//CAMPO NOMBRE
+				
 		
-		/**
-		 * @return the nombre
-		 */
 		public String getNombre() {
 			return nombre;
-		}
-
-		/**
-		 * @param nombre the nombre to set
-		 */
+		}		
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
+		}	
+		
+		
+		
+		public String getCargo() {
+			return cargo;
+		}		
+		public void setCargo(String cargo) {
+			this.cargo = cargo;
+		}	
+		
+		
+		
+		public int getSalario() {
+			return salario;
+		}		
+		public void setSalario(int salario) {
+			this.salario = salario;
 		}
 		
-		//CAMPO FEINA
-
-		/**
-		 * @return the feina
-		 */
-		public String getFeina() {
-			return feina;
-		}
-
-		/**
-		 * @param feina the feina to set
-		 */
-		public void setFeina(String feina) {
-			this.feina = feina;
+		
+		public void calculaSalario() {
+			
+			//INTERACTUO CON LA ENUM...PASANDOLE EL VALOR SI NO EXISTE DARA ERROR			
+			Cargo cargo = Cargo.valueOf(this.getCargo());
+			
+			switch (cargo) {
+			case Master:
+				this.setSalario(3600);
+			break;
+			case Chief_Officer:
+				this.setSalario(2600);						
+			break;
+			case Second_Officer:
+				this.setSalario(2300);						
+			break;
+			case Boatswain:
+				this.setSalario(2000);						
+			break;
+			case Chief_Engineer:
+				this.setSalario(3500);						
+			break;
+			case Machinist:
+				this.setSalario(2000);						
+			break;
+			case Stewards:
+				this.setSalario(1600);						
+			break;
+			case Undefined:
+				this.setSalario(0);						
+			break;
+			default:
+				this.setSalario(0);						
+			break;
+			}			
+			
 		}
 		
-		//IMPRIMIR EN CONSOLA
+		
 
-		//Metodo impresion de datos por consola
 		
 		@Override
 		public String toString() {
-			return "Cliente [id=" + id + ", nombre=" + nombre + ", feina=" + feina + "]";
+			return "Empleado [id=" + id + ", Nombre=" + nombre + ", Cargo=" + cargo + ",Salario=" + salario +"]";
 		}
 		
 
