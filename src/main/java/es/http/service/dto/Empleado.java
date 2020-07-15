@@ -27,7 +27,7 @@ public class Empleado {
 		private String cargo;		
 		
 		@Column(name = "salario")
-		private int salario;
+		private int salario ;
 		
 	//	@Column(name = "salario")
 	//	private int salario2;
@@ -49,7 +49,7 @@ public class Empleado {
 			this.id = id;
 			this.nombre = nombre;
 			this.cargo = cargo;
-//			this.salario2=calculaSalario2() ;		
+		//	this.salario=calculaSalario2() ;		
 		}
 		
 		
@@ -142,8 +142,8 @@ public class Empleado {
 		
 		
 		
-/*		
 		
+/*		
 	public int  calculaSalario2() {		
 		
 			//INTERACTUO CON LA ENUM...PASANDOLE EL VALOR SI NO EXISTE DARA ERROR			
@@ -183,8 +183,8 @@ public class Empleado {
 			return nomina;
 			
 		}
-		
 	*/	
+	
 
 		
 		@Override

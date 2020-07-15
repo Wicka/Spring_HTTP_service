@@ -51,7 +51,7 @@ public class EmpleadoController {
 	public Empleado salvarEmpleado(@RequestBody Empleado empleado) {
 	//REQUESTBODY PORQUE...............	
 	
-			empleado.calculaSalario();
+		empleado.calculaSalario();
 	
 		return empleadoServiceImpl.guardarEmpleado(empleado);
 	}

@@ -49,6 +49,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 			
 		}
 
+		@Override
 		public List<Empleado> mostrarSalarios() {
 			return iEmpleadoDAO.findAll();
 			
